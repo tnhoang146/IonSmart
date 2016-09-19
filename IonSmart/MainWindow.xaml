@@ -1,0 +1,40 @@
+﻿<Fluent:RibbonWindow x:Class="IonSmart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:local="clr-namespace:IonSmart"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Fluent:Ribbon Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}">
+        <Fluent:Ribbon.Menu>
+            <Fluent:Backstage>
+                <Fluent:RibbonTabControl>
+                    
+                </Fluent:RibbonTabControl>
+            </Fluent:Backstage>
+        </Fluent:Ribbon.Menu>
+
+        <Fluent:RibbonTabItem Header="CCTV">
+            
+        </Fluent:RibbonTabItem>
+        <Fluent:RibbonTabItem Header="Network">
+
+        </Fluent:RibbonTabItem>
+        <Fluent:RibbonTabItem Header="POS">
+
+        </Fluent:RibbonTabItem>
+        <Fluent:RibbonTabItem Header="Access Control">
+
+        </Fluent:RibbonTabItem>
+        <Fluent:RibbonTabItem Header="Analysis Report">
+
+        </Fluent:RibbonTabItem>
+        <Fluent:RibbonTabItem Header="Configuration">
+
+        </Fluent:RibbonTabItem>
+    </Fluent:Ribbon>
+
+</Fluent:RibbonWindow>
