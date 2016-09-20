@@ -16,19 +16,13 @@ using Fluent;
 namespace IonSmart
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for VAST_Page.xaml
     /// </summary>
-    public partial class MainWindow : Fluent.RibbonWindow
+    public partial class VAST_Page : Page
     {
-        public MainWindow()
+        public VAST_Page()
         {
             InitializeComponent();
-        }
-
-        public void openVast(object sender, RoutedEventArgs e)
-        {
-            VAST_Page p = new VAST_Page();
-            MainContext.Navigate(p);
         }
     }
 }

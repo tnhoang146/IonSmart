@@ -6,35 +6,46 @@
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:local="clr-namespace:IonSmart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="700" Width="1050">
+    <StackPanel>
+    <Fluent:Ribbon>
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage Header="File">
+                    <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="Exit"/>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
 
-    <Fluent:Ribbon Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}">
-        <Fluent:Ribbon.Menu>
-            <Fluent:Backstage>
-                <Fluent:RibbonTabControl>
-                    
-                </Fluent:RibbonTabControl>
-            </Fluent:Backstage>
-        </Fluent:Ribbon.Menu>
+            <Fluent:RibbonTabItem Header="CCTV">
+                <Fluent:RibbonGroupBox Header="VAST Control Panel">
+                    <Fluent:Button Header="VAST Player" LargeIcon="/images/vast.png" Width="100" Click="openVast" ></Fluent:Button>
+                    <Fluent:Button Header="Configuration" LargeIcon="/images/configuration.png" Width="100"></Fluent:Button>
+                
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="NVR Control Panel">
+                    <Fluent:Button Header="NVR Player" LargeIcon="/images/vast.png" Width="100" ></Fluent:Button>
+                    <Fluent:Button Header="Configuration" LargeIcon="/images/configuration.png" Width="100"></Fluent:Button>
 
-        <Fluent:RibbonTabItem Header="CCTV">
-            
-        </Fluent:RibbonTabItem>
-        <Fluent:RibbonTabItem Header="Network">
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Network">
 
-        </Fluent:RibbonTabItem>
-        <Fluent:RibbonTabItem Header="POS">
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="POS">
 
-        </Fluent:RibbonTabItem>
-        <Fluent:RibbonTabItem Header="Access Control">
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Access Control">
 
-        </Fluent:RibbonTabItem>
-        <Fluent:RibbonTabItem Header="Analysis Report">
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Analysis Report">
 
-        </Fluent:RibbonTabItem>
-        <Fluent:RibbonTabItem Header="Configuration">
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Configuration">
 
-        </Fluent:RibbonTabItem>
-    </Fluent:Ribbon>
-
+            </Fluent:RibbonTabItem>
+        
+        </Fluent:Ribbon>
+        <Frame x:Name="MainContext"/>
+    </StackPanel>
 </Fluent:RibbonWindow>
