@@ -46,6 +46,6 @@
             </Fluent:RibbonTabItem>
         
         </Fluent:Ribbon>
-        <Frame x:Name="MainContext"/>
+        <Frame x:Name="MainContext" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}"/>
     </StackPanel>
 </Fluent:RibbonWindow>

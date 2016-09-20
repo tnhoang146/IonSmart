@@ -11,24 +11,131 @@
     <StackPanel>
         <DockPanel>
             <Fluent:RibbonGroupBox Header="Menu">
-                <Fluent:DropDownButton Header="System"/>
-                <Fluent:DropDownButton Header="Edit"/>
-                <Fluent:DropDownButton Header="View"/>
-                <Fluent:DropDownButton Header="Configuration"/>
-                <Fluent:DropDownButton Header="Layout"/>
-                <Fluent:DropDownButton Header="System"/>
+                <Fluent:DropDownButton Header="System">
+                    <Fluent:MenuItem Header="Lock"/>
+                    <Fluent:MenuItem Header="Enable Click on Image"/>
+                    <Fluent:MenuItem Header="Language">
+                        <Fluent:MenuItem Header="English"/>
+                        <Fluent:MenuItem Header="France"/>
+                        <Fluent:MenuItem Header="China"/>
+                    </Fluent:MenuItem>
+                    <Fluent:MenuItem Header="Second View" IsEnabled="False"/>
+                    <Fluent:MenuItem Header="Launch Playback"/>
+                    <Fluent:MenuItem Header="Log Out"/>
+                </Fluent:DropDownButton>
+                <Fluent:DropDownButton Header="Edit">
+                    <Fluent:MenuItem Header="Snapshot"/>
+                    <Fluent:MenuItem Header="Print">
+                        <Fluent:MenuItem Header="Focus Cell"/>
+                        <Fluent:MenuItem Header="All Cells"/>
+                    </Fluent:MenuItem>
+                    <Fluent:MenuItem Header="Record To EXE"/>
+                    <Fluent:MenuItem Header="Snapshot Zoomed Image"/>
+                    <Fluent:MenuItem Header="Print Zoomed Image"/>
+                    <Fluent:MenuItem Header="Find..."/>
+                </Fluent:DropDownButton>
+                <Fluent:DropDownButton Header="View">
+                    <Fluent:MenuItem Header="Logical Tree View"/>
+                    <Fluent:MenuItem Header="Device Tree View"/>
+                    <Fluent:MenuItem Header="PTZ Panel"/>
+                    <Fluent:MenuItem Header="Two-way Audio Panel"/>
+                    <Fluent:MenuItem Header="Instant Playbakc Panel"/>
+                    <Fluent:MenuItem Header="Arlam Window"/>
+                    <Fluent:MenuItem Header="Full Screen"/>
+                    <Fluent:MenuItem Header="Minimize"/>
+                    <Fluent:MenuItem Header="Matrix View"/>
+                </Fluent:DropDownButton>
+                <Fluent:DropDownButton Header="Configuration">
+                    <Fluent:MenuItem Header="Camera Management"/>
+                    <Fluent:MenuItem Header="Station Management"/>
+                    <Fluent:MenuItem Header="Local Tree View Management"/>
+                    <Fluent:MenuItem Header="I/O Box Management"/>
+                    <Fluent:MenuItem Header="User Management"/>
+                    <Fluent:MenuItem Header="Association Management"/>
+                    <Fluent:MenuItem Header="Arlarm Management"/>
+                    <Fluent:MenuItem Header="Virtual Maxtrix Management"/>
+                    <Fluent:MenuItem Header="Search VivoCam Switches..."/>
+                    <Fluent:MenuItem Header="Station Settings"/>
+                    <Fluent:MenuItem Header="Client Settings"/>
+                    <Fluent:MenuItem Header="Video Enhancement">
+                        <Fluent:MenuItem Header="Basic Image Adjustment"/>
+                        <Fluent:MenuItem Header="Defog"/>
+                    </Fluent:MenuItem>
+                </Fluent:DropDownButton>
+                <Fluent:DropDownButton Header="Layout">
+                    <Fluent:MenuItem Header="Start Rotating"/>
+                    <Fluent:MenuItem Header="Save"/>
+                    <Fluent:MenuItem Header="Load"/>
+                    <Fluent:MenuItem Header="Delete"/>
+                </Fluent:DropDownButton>
             </Fluent:RibbonGroupBox>
             <Fluent:RibbonGroupBox Header="Control">
-                <Fluent:Button Header="System" SizeDefinition="Middle"/>
-                <Fluent:Button Header="Edit" SizeDefinition="Middle"/>
-                <Fluent:Button Header="View" SizeDefinition="Middle"/>
-                <Fluent:Button Header="Configuration" SizeDefinition="Middle"/>
-                <Fluent:Button Header="Layout" SizeDefinition="Middle"/>
-                <Fluent:Button Header="System" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Logout" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Lock" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Volume" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Snapshot" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Print" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Record" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Alarm" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Adjust SVC Level" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Remove All Connections" SizeDefinition="Middle"/>
+                <Fluent:DropDownButton Header="Layout" SizeDefinition="Middle">
+                    <Fluent:MenuItem Header="1x1"/>
+                    <Fluent:MenuItem Header="2x2"/>
+                    <Fluent:MenuItem Header="3x3"/>
+                    <Fluent:MenuItem Header="4x4"/>
+                    <Fluent:MenuItem Header="5x5"/>
+                    <Fluent:MenuItem Header="6x6"/>
+                    <Fluent:MenuItem Header="7x7"/>
+                    <Fluent:MenuItem Header="8x8"/>
+                    <Fluent:MenuItem Header="9x9"/>
+                    <Fluent:MenuItem Header="10x10"/>
+                </Fluent:DropDownButton>
+                <Fluent:Button Header="Full Screen" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Page Up" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Page Down" SizeDefinition="Middle"/>
+                <Fluent:Button Header="Start Rotating" SizeDefinition="Middle"/>
             </Fluent:RibbonGroupBox>
             <Fluent:RibbonGroupBox HorizontalAlignment="Right">
                 <Image Source="images\vivotek_logo.png" />
             </Fluent:RibbonGroupBox>
+        </DockPanel>
+        <DockPanel >
+            <StackPanel>
+                <GroupBox Height="300" Width="200" Header="Camera List">
+                    <TreeView x:Name="StationTree_1" >
+                        <TreeViewItem Header="Station Camera">
+                            <TreeViewItem Header="Camera 1"/>
+                            <TreeViewItem Header="Camera 2"/>
+                            <TreeViewItem Header="Camera 3"/>
+                            <TreeViewItem Header="Camera 4"/>
+                            <TreeViewItem Header="Camera 5"/>
+                        </TreeViewItem>
+                    </TreeView>
+                </GroupBox>
+                
+                <TabControl VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}">
+                    <TabItem Header="PTZ"></TabItem>
+                    <TabItem Header="Two-way Audio"></TabItem>
+                </TabControl>
+            </StackPanel>
+            <StackPanel>
+                <GroupBox Header="Viewer" Height="400" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}">
+                    <TextBox Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}"></TextBox>
+                </GroupBox>
+                <DataGrid Height="300">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Instant Playback" Width="100"/>
+                        <DataGridTemplateColumn Header="Name" Width="100"/>
+                        <DataGridTemplateColumn Header="Description" Width="100"/>
+                        <DataGridTemplateColumn Header="Source" Width="100"/>
+                        <DataGridTemplateColumn Header="Event Type" Width="100"/>
+                        <DataGridTemplateColumn Header="Value" Width="100"/>
+                        <DataGridTemplateColumn Header="Time" Width="100"/>
+                        <DataGridTemplateColumn Header="State" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </DockPanel>
     </StackPanel>
 </Page>
