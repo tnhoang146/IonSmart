@@ -27,8 +27,11 @@ namespace IonSmart
 
         public void openVast(object sender, RoutedEventArgs e)
         {
-            VAST_Page p = new VAST_Page();
-            MainContext.Navigate(p);
+            MainContext.Navigate(new Uri("VAST_Page.xaml", UriKind.Relative));
+            MainContext.HorizontalAlignment = HorizontalAlignment.Stretch;
+            MainContext.Height = this.ActualHeight;
+            var popup = new VAST_CamManagement_PopupWindow();
+            popup.ShowDialog();
         }
     }
 }

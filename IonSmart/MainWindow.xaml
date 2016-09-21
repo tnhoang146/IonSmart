@@ -6,7 +6,7 @@
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:local="clr-namespace:IonSmart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1050">
+        Title="IonSmart" Height="700" Width="1050">
     <StackPanel>
     <Fluent:Ribbon>
             <Fluent:Ribbon.Menu>
@@ -46,6 +46,8 @@
             </Fluent:RibbonTabItem>
         
         </Fluent:Ribbon>
-        <Frame x:Name="MainContext" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}"/>
+        <DockPanel Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}">
+        <Frame x:Name="MainContext"/>
+        </DockPanel>
     </StackPanel>
 </Fluent:RibbonWindow>

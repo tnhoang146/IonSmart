@@ -6,7 +6,7 @@
       xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
       xmlns:local="clr-namespace:IonSmart"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300">
+       Title="VAST Player" d:DesignHeight="1402.246">
 
     <StackPanel>
         <DockPanel>
@@ -100,9 +100,9 @@
                 <Image Source="images\vivotek_logo.png" />
             </Fluent:RibbonGroupBox>
         </DockPanel>
-        <DockPanel >
-            <StackPanel>
-                <GroupBox Height="300" Width="200" Header="Camera List">
+        <DockPanel Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}">
+            <StackPanel VerticalAlignment="Stretch">
+                <GroupBox Height="250" Width="250" Header="Camera List">
                     <TreeView x:Name="StationTree_1" >
                         <TreeViewItem Header="Station Camera">
                             <TreeViewItem Header="Camera 1"/>
@@ -113,28 +113,81 @@
                         </TreeViewItem>
                     </TreeView>
                 </GroupBox>
-                
-                <TabControl VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}">
-                    <TabItem Header="PTZ"></TabItem>
-                    <TabItem Header="Two-way Audio"></TabItem>
-                </TabControl>
+                <GroupBox Header="Camera Control">
+                    <TabControl MaxHeight="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch">
+                        <TabItem Header="PTZ">
+                            <StackPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Activated mode: "/>
+                                    <ComboBox SelectedIndex="0" Width="100">
+                                        <ComboBoxItem>Digital</ComboBoxItem>
+                                    </ComboBox>
+                                </DockPanel>
+                                <TextBlock Text="   "/>
+                                <DockPanel>
+                                    <TextBlock Text="PTZ Operation mode: "/>
+                                    <ComboBox SelectedIndex="0" Width="100">
+                                        <ComboBoxItem>Click to move</ComboBoxItem>
+                                        <ComboBoxItem>Continuous mode</ComboBoxItem>
+                                    </ComboBox>
+                                </DockPanel>
+                                <TextBlock Text="   "/>
+                                <Grid HorizontalAlignment="Center">
+                                    <StackPanel>
+                                        <Fluent:Button Header="Up"/>
+                                        <DockPanel>
+                                            <Fluent:Button Header="Left"/>
+                                            <Fluent:Button Header="Home"/>
+                                            <Fluent:Button Header="Right"/>
+                                        </DockPanel>
+                                        <Fluent:Button Header="Down"/>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </TabItem>
+                        
+                        <TabItem Header="Two-way Audio">
+                            
+                        </TabItem>
+                    </TabControl>
+                </GroupBox>
             </StackPanel>
+            
             <StackPanel>
                 <GroupBox Header="Viewer" Height="400" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}">
                     <TextBox Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualHeight}" Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ActualWidth}"></TextBox>
                 </GroupBox>
-                <DataGrid Height="300">
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="Instant Playback" Width="100"/>
-                        <DataGridTemplateColumn Header="Name" Width="100"/>
-                        <DataGridTemplateColumn Header="Description" Width="100"/>
-                        <DataGridTemplateColumn Header="Source" Width="100"/>
-                        <DataGridTemplateColumn Header="Event Type" Width="100"/>
-                        <DataGridTemplateColumn Header="Value" Width="100"/>
-                        <DataGridTemplateColumn Header="Time" Width="100"/>
-                        <DataGridTemplateColumn Header="State" Width="100"/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <TabControl Height="180" >
+                    
+                    <TabItem Header="Realtime">
+                        <DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Instant Playback" Width="100"/>
+                                <DataGridTemplateColumn Header="Name" Width="100"/>
+                                <DataGridTemplateColumn Header="Description" Width="100"/>
+                                <DataGridTemplateColumn Header="Source" Width="100"/>
+                                <DataGridTemplateColumn Header="Event Type" Width="100"/>
+                                <DataGridTemplateColumn Header="Value" Width="100"/>
+                                <DataGridTemplateColumn Header="Time" Width="100"/>
+                                <DataGridTemplateColumn Header="State" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="Filter">
+                        <DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Instant Playback" Width="100"/>
+                                <DataGridTemplateColumn Header="Name" Width="100"/>
+                                <DataGridTemplateColumn Header="Description" Width="100"/>
+                                <DataGridTemplateColumn Header="Source" Width="100"/>
+                                <DataGridTemplateColumn Header="Event Type" Width="100"/>
+                                <DataGridTemplateColumn Header="Value" Width="100"/>
+                                <DataGridTemplateColumn Header="Time" Width="100"/>
+                                <DataGridTemplateColumn Header="State" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                </TabControl>
             </StackPanel>
         </DockPanel>
     </StackPanel>
